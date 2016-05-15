@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+   <head>
+      <meta charset = "UTF-8">
+      <title>React App</title>
+      <link rel="stylesheet" type="text/css" href="styles.js"/>
+      <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+   </head>
+
+   <body>
+      <div id="seccion" style=" border:thin solid silver">
+  Sección de contenidos...
+  
+  
+  <input type="radio" value="si" name="pregunta" id="pregunta_si"/> SI
+<input type="radio" value="no" name="pregunta" id="pregunta_no"/> NO
+<input type="radio" value="nsnc" name="pregunta" id="pregunta_nsnc"/> NS/NC
+</div>
+
+
+      <div class="container">
+        
+         <div class="row">
+            <div class="col-lg-5">
+               <div class="center-block text-center">
+                
+                  
+                   <div id = "app"></div>
+                   <form>
+                       <div class="form-group">
+                         <label>Email address</label>
+                         <input type="email" class="form-control" id="email" placeholder="Email">
+                       </div>
+                       <div class="form-group">
+                         <label>Password</label>
+                         <input type="password" class="form-control" id="passoword" placeholder="Password">
+                       </div>
+                       
+                       <button id="clickeame" type="button" class="btn btn-success">Clickeame</button>
+                   </form>
+               
+               </div>
+            </div>
+         </div>
+         
+      </div>
+    
+      
+
+
+
+      <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+      <script src = "index.js"></script>
+      <script>
+
+ 
+ function sayHello(element){
+            
+            alert('React será algo fabuloso de aprender '+element.type);
+            
+            
+      };
+      
+      var clickeame=document.getElementById("clickeame").onclick=sayHello; 
+ 
+
+      </script>
+      
+
+   </body>
+
+</html>
