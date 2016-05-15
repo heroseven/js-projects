@@ -1,8 +1,8 @@
 import React from 'react';
 
 class App extends React.Component {
-   constructor() {
-      super();
+   constructor(props) {
+      super(props);
 		
       this.state = {
          data: 
@@ -24,13 +24,16 @@ class App extends React.Component {
                "name":"Baz",
                "age":"40"
             }
-         ]
+         ],
+         header: "hola"
       }
    }
 	
    render() {
       return (
          <div>
+         <Component1 nombre="componente 1" codigo="20101170"/>
+          <Component1 nombre={this.state.header} codigo={this.state.data[2].name}/>
             <Header/>
             <table>
                <tbody>
@@ -46,7 +49,18 @@ class Header extends React.Component {
    render() {
       return (
          <div>
-            <h1>Header</h1>
+            <h1>Header2222</h1>
+         </div>
+      );
+   }
+}
+
+class Component1 extends React.Component {
+   render() {
+      return (
+         <div>
+            <h1>{this.props.nombre}</h1>
+            <h2>{this.props.codigo}</h2>
          </div>
       );
    }
