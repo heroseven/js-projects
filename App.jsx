@@ -3,24 +3,22 @@ import React from 'react';
 class App extends React.Component {
    constructor() {
       super();
-   
-   this.forceUpdateHandler= this.forceUpdateHandler.bind(this);		
-
+      this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
    };
-	
-	forceUpdateHandler(){
-	   this.forceUpdate();
-	}
+
+   forceUpdateHandler() {
+      this.forceUpdate();
+   };
+
    render() {
       return (
          <div>
-          <button class="btn btn-success" onClick={this.forceUpdateHandler}>Force Update</button>
-          <h4>Random number: {Math.random()}</h4>
+            <button onClick = {this.forceUpdateHandler}>FORCE UPDATE</button>
+            <h4>Random number: {Math.random()}</h4>
          </div>
       );
    }
 }
-
 class Header extends React.Component {
    render() {
       return (
