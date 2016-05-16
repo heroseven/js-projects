@@ -4,25 +4,31 @@ class App extends React.Component {
    constructor() {
       super();
 	   //se le esta pasando logica del construector al metodo findDomNodeHandler
-      this.setPlusOne= this.setPlusOne.bind(this);
+      this.setChangeAccordingToInput= this.setChangeAccordingToInput.bind(this);
       
       this.state={
-         data:0,
+         data:'',
       }
    };
    
-   setPlusOne(){
-      
-      this.setState({data: this.state.data+1});
+   /*getDomNode(){
+      var valor=document.getElementById('valor');
+      return ReactDOM.findDOMNode(valor).value;
+   };*/
+   
+   setChangeAccordingToInput(e){
+      this.setState({data:e.target.value})
    }
+   
 
   
-
+   componentWillMount(){
+      this.setState({data:'hola'});
+   }
    render() {
       return (
          <div>
-            <button onClick={this.setPlusOne}>SUMAR +1</button>
-            <Mostrar myNumber={this.state.data}/>
+            {this.state.data}<input value={this.state.data} onChange={this.setChangeAccordingToInput} id="valor" type="text"/>
          </div>
       );
    }
