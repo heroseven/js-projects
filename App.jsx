@@ -1,45 +1,21 @@
 import React from 'react';
 
 class App extends React.Component {
-   constructor(props) {
-      super(props);
-		
-      this.state = {
-         data: 
-         [
-            {
-               "id":1,
-               "name":"Foo",
-               "age":"20"
-            },
-				
-            {
-               "id":2,
-               "name":"Bar",
-               "age":"30"
-            },
-				
-            {
-               "id":3,
-               "name":"Baz",
-               "age":"40"
-            }
-         ],
-         header: "hola"
-      }
-   }
+   constructor() {
+      super();
+   
+   this.forceUpdateHandler= this.forceUpdateHandler.bind(this);		
+
+   };
 	
+	forceUpdateHandler(){
+	   this.forceUpdate();
+	}
    render() {
       return (
          <div>
-         <Component1 nombre="componente 1" codigo="20101170"/>
-          <Component1 nombre={this.state.header} codigo={this.state.data[2].name}/>
-            <Header/>
-            <table>
-               <tbody>
-                  {this.state.data.map((person, i) => <TableRow key = {i} data = {person} />)}
-               </tbody>
-            </table>
+          <button class="btn btn-success" onClick={this.forceUpdateHandler}>Force Update</button>
+          <h4>Random number: {Math.random()}</h4>
          </div>
       );
    }
